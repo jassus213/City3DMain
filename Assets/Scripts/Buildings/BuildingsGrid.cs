@@ -7,6 +7,7 @@ public class BuildingsGrid : MonoBehaviour
     private Building[,] grid;
     private Building _flyingBuilding;
     private Camera _mainCamera;
+    
 
     private void Awake()
     {
@@ -28,6 +29,8 @@ public class BuildingsGrid : MonoBehaviour
     {
         if (_flyingBuilding != null)
         {
+            // TODO "Collision with another houses (Change alfa or do up object)"
+            
             var groundPlane = new Plane(Vector3.up, Vector3.zero);
             var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
