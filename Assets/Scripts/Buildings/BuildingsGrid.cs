@@ -2,20 +2,11 @@ using UnityEngine;
 
 public class BuildingsGrid : MonoBehaviour
 {
-    public Vector2Int GridSize = new Vector2Int(10, 10);
+    private bool _isCanPlase;
+    private BuildingsObject _flyingBuilding;
 
-    private Building[,] grid;
-    private Building _flyingBuilding;
-    private Camera _mainCamera;
-    
 
-    private void Awake()
-    {
-        grid = new Building[GridSize.x, GridSize.y];
-        _mainCamera = Camera.main;
-    }
-
-    public void StartPlacingBuild(Building buildingPrefab)
+    public void StartPlacingBuild(BuildingsObject buildingPrefab)
     {
         if (_flyingBuilding != null)
         {
@@ -31,82 +22,51 @@ public class BuildingsGrid : MonoBehaviour
         {
             // TODO "Collision with another houses (Change alfa or do up object)"
             
-            var groundPlane = new Plane(Vector3.up, Vector3.zero);
-            var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (groundPlane.Raycast(ray, out float position))
+            
+            if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-                Vector3 worldPosition = ray.GetPoint(position);
+                Debug.Log(hitInfo.transform.gameObject.layer);
+                /*if(hitInfo.transform.gameObject.layer != 6)
+                    return;*/
 
-                int x = Mathf.RoundToInt(worldPosition.x);
-                int y = Mathf.RoundToInt(worldPosition.z);
+                int x = Mathf.RoundToInt(hitInfo.point.x);
+                int y = Mathf.RoundToInt(hitInfo.point.z);
 
-                bool available = true;
 
-                if (x < 0 || x > GridSize.x - _flyingBuilding.Size.x) available = false;
-                if (y < 0 || y > GridSize.y - _flyingBuilding.Size.y) available = false;
-
-                if (available && IsPlaceTaken(x, y)) available = false;
-
-                _flyingBuilding.transform.position = new Vector3(x, 0, y);
-                _flyingBuilding.SetTransperent(available);
-                
+                _flyingBuilding.MoveObject(new Vector3(hitInfo.point.x,
+                    hitInfo.point.y + _flyingBuilding.Size.y, hitInfo.point.z));
                 
 
-                if (available && Input.GetMouseButton(0))
+
+                if (Input.GetMouseButtonDown(1))
                 {
-                    PlaceFlyingBuilding(x,y);
+                    RotateBuilding();
+                }
+
+
+                if (_flyingBuilding.IsCanPlace() && Input.GetMouseButton(0))
+                {
+                    _flyingBuilding.PlaceFlyingBuilding(hitInfo.point);
+                    _flyingBuilding = null;
                 }
             }
+            
         }
     }
+
+
+
+    private void RotateBuilding()
+    {
+        _flyingBuilding.transform.Rotate(_flyingBuilding.transform.rotation.x,
+            _flyingBuilding.transform.rotation.y + 90, _flyingBuilding.transform.rotation.z);
+    }
+
+
     
-    private void OnDrawGizmosSelected()
-    {
-        for (int x = 0; x < GridSize.x; x++)
-        {
-            for (int y = 0; y < GridSize.y; y++)
-            {
-                if ((x + y) % 2 == 0)
-                {
-                    Gizmos.color = new Color(0.88f, 0f, 1f, 0.3f); 
-                }
-                else
-                {
-                    Gizmos.color = new Color(1f, 0.68f, 0f, 0.3f); 
-                }
-                    
-                Gizmos.DrawCube(transform.position + new Vector3(x, 0, y), new Vector3(1, 1f, 1));
-            }
-        }
-        
-    }
 
-    private bool IsPlaceTaken(int placeX, int placeY)
-    {
-        for (int x = 0; x < _flyingBuilding.Size.x; x++)
-        {
-            for (int y = 0; y < _flyingBuilding.Size.y; y++)
-            {
-                if (grid[placeX + x, placeY + y] != null)
-                    return true;
-            }
-        }
-
-        return false;
-    }
-
-    private void PlaceFlyingBuilding(int placeX, int placeY)
-    {
-        for (int x = 0; x < _flyingBuilding.Size.x; x++)
-        {
-            for (int y = 0; y < _flyingBuilding.Size.y; y++)
-            {
-                grid[placeX + x, placeY + y] = _flyingBuilding;
-            }
-        }
-        _flyingBuilding.SetDefaultMaterial();
-        _flyingBuilding = null;
-    }
-    //test//
+    
 }
