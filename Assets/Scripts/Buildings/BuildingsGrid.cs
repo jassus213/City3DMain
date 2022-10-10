@@ -53,7 +53,7 @@ public class BuildingsGrid : MonoBehaviour
                     _flyingBuilding = null;
                 }
             }
-            
+
         }
     }
 
@@ -64,9 +64,5 @@ public class BuildingsGrid : MonoBehaviour
         _flyingBuilding.transform.Rotate(_flyingBuilding.transform.rotation.x,
             _flyingBuilding.transform.rotation.y + 90, _flyingBuilding.transform.rotation.z);
     }
-
-
-    
-
     
 }
