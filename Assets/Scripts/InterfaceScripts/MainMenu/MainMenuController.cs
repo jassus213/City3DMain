@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] private string _loadingScene = "GameScene";
-    
-    
+
+
     public void OpenFolder(GameObject folder)
     {
         folder.SetActive(true);
@@ -21,4 +21,6 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(_loadingScene);
     }
     
+   
+
 }
