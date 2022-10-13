@@ -36,12 +36,12 @@ public class BuildingsGrid : MonoBehaviour
                 int y = Mathf.RoundToInt(hitInfo.point.z);
 
 
-                _flyingBuilding.MoveObject(new Vector3(hitInfo.point.x,
-                    hitInfo.point.y + _flyingBuilding.Size.y, hitInfo.point.z));
+                _flyingBuilding.MoveObject(new Vector3(x,
+                    hitInfo.point.y + _flyingBuilding.Size.y, y));
                 
 
 
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButtonUp(1))
                 {
                     RotateBuilding();
                 }
@@ -61,8 +61,8 @@ public class BuildingsGrid : MonoBehaviour
 
     private void RotateBuilding()
     {
-        _flyingBuilding.transform.Rotate(_flyingBuilding.transform.rotation.x,
-            _flyingBuilding.transform.rotation.y + 90, _flyingBuilding.transform.rotation.z);
+        var rotationToAdd = new Vector3(_flyingBuilding.transform.rotation.x, _flyingBuilding.transform.rotation.y, _flyingBuilding.transform.rotation.z + 90);
+        _flyingBuilding.transform.Rotate(rotationToAdd);
     }
 
 

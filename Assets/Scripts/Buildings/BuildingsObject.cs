@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuildingsObject : MonoBehaviour
 {
 
-    public Renderer MainRenderer;
+    private Renderer _mainRenderer;
     public Vector2Int Size = Vector2Int.one;
     private BoxCollider _collider;
 
@@ -13,23 +13,24 @@ public class BuildingsObject : MonoBehaviour
     private void Awake()
     {
         _collider = gameObject.GetComponent<BoxCollider>();
+        _mainRenderer = gameObject.GetComponent<MeshRenderer>();
     }
 
     public void SetColorStatus(bool available)
     {
         if (available)
         {
-            MainRenderer.material.color = Color.green;
+            _mainRenderer.material.color = Color.green;
         }
         else
         {
-            MainRenderer.material.color = Color.red;
+            _mainRenderer.material.color = Color.red;
         }
     }
 
     public void SetDefaultMaterial()
     {
-        MainRenderer.material.color = Color.white;
+        _mainRenderer.material.color = Color.white;
     }
     
     private void OnCollisionEnter(Collision collision)
@@ -46,27 +47,7 @@ public class BuildingsObject : MonoBehaviour
     {
         Debug.Log("On Collision exit: " + collision.collider.name);
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        for (int x = 0; x < Size.x; x++)
-        {
-            for (int y = 0; y < Size.y; y++)
-            {
-                if ((x + y) % 2 == 0)
-                {
-                    Gizmos.color = new Color(0.88f, 0f, 1f, 0.3f); 
-                }
-                else
-                {
-                    Gizmos.color = new Color(1f, 0.68f, 0f, 0.3f); 
-                }
-                    
-                Gizmos.DrawCube(transform.position + new Vector3(x, 0, y), new Vector3(1, 1f, 1));
-            }
-        }
-        
-    }
+    
 
     public void MoveObject(Vector3 position)
     {
