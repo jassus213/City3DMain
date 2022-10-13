@@ -156,3 +156,5 @@ _ReSharper*/
 *.vsp
 *.vspx
 
+
+Logs/
