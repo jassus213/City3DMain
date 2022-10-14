@@ -5,7 +5,6 @@ public class BuildingsObject : MonoBehaviour
 {
 
     private Renderer _mainRenderer;
-    public Vector2Int Size = Vector2Int.one;
     private BoxCollider _collider;
 
 
@@ -91,7 +90,6 @@ public class BuildingsObject : MonoBehaviour
             }
         }
         
-        Debug.Log(result);
         return result;
     }
     
