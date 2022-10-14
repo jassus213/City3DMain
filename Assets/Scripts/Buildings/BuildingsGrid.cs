@@ -18,6 +18,27 @@ public class BuildingsGrid : MonoBehaviour
 
     private void Update()
     {
+        if (_flyingBuilding == null)
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Input.GetMouseButtonUp(1))
+            {
+                Debug.Log("Зашёл");
+                if (Physics.Raycast(ray, out RaycastHit hitInfo))
+                {
+                    if (hitInfo.transform.gameObject.layer == 7)
+                    {
+                        Debug.Log("Нашёл Дом");
+                        _flyingBuilding = hitInfo.transform.GetComponent<BuildingsObject>();
+                        var collider = _flyingBuilding.GetComponent<Collider>();
+                        collider.enabled = false;
+                    }
+                }
+            }
+            
+        }
+        
+
         if (_flyingBuilding != null)
         {
             // TODO "Collision with another houses (Change alfa or do up object)"
@@ -37,7 +58,7 @@ public class BuildingsGrid : MonoBehaviour
 
 
                 _flyingBuilding.MoveObject(new Vector3(x,
-                    hitInfo.point.y + _flyingBuilding.Size.y, y));
+                    hitInfo.point.y + 1, y));
                 
 
 
