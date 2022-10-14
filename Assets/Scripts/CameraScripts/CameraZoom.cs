@@ -11,7 +11,6 @@ public class CameraZoom : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(Input.mousePosition);
         Zoom();
     }
 
@@ -22,7 +21,7 @@ public class CameraZoom : MonoBehaviour
         {
             Vector3 dir = _myCamera.ScreenPointToRay(Input.mousePosition).direction; 
             Vector3 temp = dir * zoom;
-            temp = temp * 120f * Time.deltaTime;
+            temp = temp * 200f * Time.deltaTime;
             _myCamera.transform.Translate(temp, Space.World);
         }
     }
