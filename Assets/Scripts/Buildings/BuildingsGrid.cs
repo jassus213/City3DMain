@@ -24,7 +24,7 @@ public class BuildingsGrid : MonoBehaviour
             if (RaycastHit() != null)
             {
                 var hitInfo = RaycastHit();
-                if (Input.GetMouseButtonUp(1))
+                if (Input.GetMouseButtonDown(1))
                 {
                     if (hitInfo.Value.transform.gameObject.layer == 7)
                     {
@@ -53,7 +53,7 @@ public class BuildingsGrid : MonoBehaviour
                     hitInfo.Value.point.y + 1, y));
 
 
-                if (Input.GetMouseButtonUp(1))
+                if (Input.GetMouseButtonDown(1))
                 {
                     RotateBuilding();
                 }
