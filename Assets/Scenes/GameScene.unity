@@ -674,7 +674,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 7703812773563354694, guid: 3fac2e3822436b84cac134e817b18d79,
             type: 3}
-          m_ObjectArgumentAssemblyTypeName: BuildingsObject, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: Building, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

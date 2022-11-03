@@ -44,13 +44,13 @@
      <Compile Include="Assets\Scripts\InterfaceScripts\GameScene\SettingsStatusController.cs" />
      <Compile Include="Assets\Scripts\Buildings\BuildingsObject.cs" />
      <Compile Include="Assets\Scripts\Buildings\Building.cs" />
+     <Compile Include="Assets\Scripts\InterfaceScripts\GameScene\ButtonsContainer.cs" />
      <Compile Include="Assets\Scripts\InterfaceScripts\MainMenu\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\CameraScripts\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\InterfaceScripts\MainMenu\SettingsController.cs" />
+     <Compile Include="Assets\Scripts\InterfaceScripts\GameScene\ShopController.cs" />
      <Compile Include="Assets\Scripts\Buildings\BuildingsGrid.cs" />
      <Compile Include="Assets\Scripts\CameraScripts\CameraMovment.cs" />
-     <Compile Include="Assets\Scripts\InterfaceScripts\GameScene\ShopController.cs" />
-     <Compile Include="Assets\Scripts\InterfaceScripts\GameScene\ButtonsContainer.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
