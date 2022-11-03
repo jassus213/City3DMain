@@ -7,7 +7,7 @@ public class BuildingsGrid : MonoBehaviour
     private GameInterface _gameInterface;
 
 
-    public void StartPlacingBuild(BuildingsObject buildingPrefab)
+    public void StartPlacingBuild(Building buildingPrefab)
     {
         if (_flyingBuilding != null)
         {
