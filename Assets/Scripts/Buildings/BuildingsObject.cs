@@ -13,7 +13,7 @@ public class BuildingsObject : MonoBehaviour
     {
         _collider = gameObject.GetComponent<BoxCollider>();
         _mainRenderer = gameObject.GetComponent<MeshRenderer>();
-        _groundLayer = LayerMask.GetMask("House","Ground");
+        _groundLayer = LayerMask.GetMask("House", "Ground");
     }
 
     public void SetColorStatus(bool available)
@@ -33,44 +33,20 @@ public class BuildingsObject : MonoBehaviour
         _mainRenderer.material.color = Color.white;
     }
 
-    public void MoveObject(Vector3 position)
+    public bool MoveObject(Vector3 position)
     {
         gameObject.transform.position = position;
 
-        if (IsObjectClose())
-        {
-            position.y += 10;
-            gameObject.transform.position = position;
-            //Debug.Log("Da");
-        }
-
         if (DetectGround())
         {
-            SetColorStatus(false);
-        }
-        else
-        {
             SetColorStatus(true);
+            return true;
         }
+
+        SetColorStatus(false);
+        return false;
     }
 
-    private bool IsObjectClose()
-    {
-        var result = false;
-        result = DetectHouse(Vector3.left);
-        if (result)
-            return true;
-        result = DetectHouse(Vector3.right);
-        if (result)
-            return true;
-        result = DetectHouse(Vector3.forward);
-        if (result)
-            return true;
-        result = DetectHouse(Vector3.back);
-        return result;
-    }
-
-    
 
     public void PlaceFlyingBuilding(Vector3 place)
     {
@@ -88,17 +64,26 @@ public class BuildingsObject : MonoBehaviour
         {
             bounds.Encapsulate(renderList[i].bounds);
         }
-        
+
         var result = Physics.BoxCast(bounds.center + 100f * Vector3.up,
             bounds.extents + 0.1f * Vector3.right + 0.1f * Vector3.forward,
-            Vector3.down, out var hit, Quaternion.identity, 2000f);
-        
-        
-        Debug.Log("distance:" + hit.distance);
-        Debug.Log("layer:" + hit.transform.gameObject.layer);
+            Vector3.down, out var hit, Quaternion.identity, 2000f, _groundLayer);
+
+        if (!result)
+            return false;
+
+        if (hit.transform.gameObject.layer != 6)
+        {
+            var objectSize = Vector3.Scale(transform.localScale, bounds.size);
+            var position = gameObject.transform.position;
+            position = new Vector3(position.x, position.y + bounds.size.y, position.z);
+            gameObject.transform.position = position;
+            return false;
+        }
+
         return result;
     }
-    
+
     private bool DetectHouse(Vector3 direction)
     {
         var distance = 10;
@@ -120,7 +105,7 @@ public class BuildingsObject : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-               // Debug.Log(hitInfo.distance);
+                // Debug.Log(hitInfo.distance);
                 if (hitInfo.transform.gameObject.layer == 7 && hitInfo.distance <= distance)
                 {
                     result = true;
