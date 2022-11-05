@@ -44,21 +44,23 @@ public class CameraMovment : MonoBehaviour
             
             if (xDirection < 0)
             {
-                xMovement = -0.3f * xforce;
+                xMovement = -3f * xforce;
+                Debug.Log(xforce);
             }
             else
             {
-                xMovement = 0.3f * xforce;
+                xMovement = 3f * xforce;
+                Debug.Log(xforce);
             }
 
             float yMovement = 0;
             if (yDirection < 0)
             {
-                yMovement = -0.3f * yforce;
+                yMovement = -3f * yforce;
             }
             else
             {
-                yMovement = 0.3f * yforce;
+                yMovement = 3f * yforce;
             }
 
 
