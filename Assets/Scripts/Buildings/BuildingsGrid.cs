@@ -4,7 +4,6 @@ public class BuildingsGrid : MonoBehaviour
 {
     private bool _isCanPlase;
     private BuildingsObject _flyingBuilding;
-    private GameInterface _gameInterface;
 
 
     public void StartPlacingBuild(BuildingsObject buildingPrefab)
@@ -101,7 +100,3 @@ public class BuildingsGrid : MonoBehaviour
     }
 }
 
-public class GameInterface
-{
-    private GameObject _houseInfoFolder;
-}
