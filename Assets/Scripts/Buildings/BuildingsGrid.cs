@@ -31,6 +31,7 @@ public class BuildingsGrid : MonoBehaviour
                         _flyingBuilding = hitInfo.Value.transform.GetComponent<BuildingsObject>();
                         var collider = _flyingBuilding.GetComponent<Collider>();
                         collider.enabled = false;
+                        return; 
                     }
                 }
                 
@@ -45,21 +46,20 @@ public class BuildingsGrid : MonoBehaviour
             {
                 var hitInfo = RaycastHit();
                 
-                int x = Mathf.RoundToInt(hitInfo.Value.point.x);
-                int y = Mathf.RoundToInt(hitInfo.Value.point.z);
+                var x = Mathf.RoundToInt(hitInfo.Value.point.x);
+                var y = Mathf.RoundToInt(hitInfo.Value.point.z);
 
-
-                _flyingBuilding.MoveObject(new Vector3(x,
-                    hitInfo.Value.point.y + 1, y));
+                _flyingBuilding.MoveObject(new Vector3(x, hitInfo.Value.point.y, y));
 
 
                 if (Input.GetMouseButtonDown(1))
                 {
                     RotateBuilding();
+                    return;
                 }
 
 
-                if (_flyingBuilding.IsCanPlace() && Input.GetMouseButton(0))
+                if (/*_flyingBuilding.DetectGround(Vector3.down) &&*/ Input.GetMouseButton(0))
                 {
                     _flyingBuilding.PlaceFlyingBuilding(hitInfo.Value.point);
                     _flyingBuilding = null;
