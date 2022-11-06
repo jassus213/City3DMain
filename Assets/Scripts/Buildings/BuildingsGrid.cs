@@ -4,7 +4,6 @@ public class BuildingsGrid : MonoBehaviour
 {
     private bool _isCanPlase;
     private BuildingsObject _flyingBuilding;
-    private GameInterface _gameInterface;
 
 
     public void StartPlacingBuild(BuildingsObject buildingPrefab)
@@ -49,7 +48,7 @@ public class BuildingsGrid : MonoBehaviour
                 var x = Mathf.RoundToInt(hitInfo.Value.point.x);
                 var y = Mathf.RoundToInt(hitInfo.Value.point.z);
 
-                _flyingBuilding.MoveObject(new Vector3(x, hitInfo.Value.point.y, y));
+                var canPlace = _flyingBuilding.MoveObject(new Vector3(x, hitInfo.Value.point.y, y));
 
 
                 if (Input.GetMouseButtonDown(1))
@@ -59,7 +58,7 @@ public class BuildingsGrid : MonoBehaviour
                 }
 
 
-                if (/*_flyingBuilding.DetectGround(Vector3.down) &&*/ Input.GetMouseButton(0))
+                if (canPlace && Input.GetMouseButton(0))
                 {
                     _flyingBuilding.PlaceFlyingBuilding(hitInfo.Value.point);
                     _flyingBuilding = null;
@@ -101,7 +100,3 @@ public class BuildingsGrid : MonoBehaviour
     }
 }
 
-public class GameInterface
-{
-    private GameObject _houseInfoFolder;
-}
