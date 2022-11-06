@@ -1,8 +1,6 @@
-using UnityEngine;
-
 namespace Buildings
 {
-    public interface IRemoveable
+    public interface IRemovable
     {
         void Remove();
     }

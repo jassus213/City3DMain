@@ -6,8 +6,7 @@ public class DestoryController : MonoBehaviour
 {
 
     private bool isActive = false;
-    private IRemoveable _removeable;
-    
+
     [CanBeNull]
     private GameObject IsHouse()
     {
@@ -25,7 +24,7 @@ public class DestoryController : MonoBehaviour
     private void StartDestroy()
     {
         var worldobject = IsHouse();
-        if (worldobject.GetComponent<IRemoveable>() != null && Input.GetMouseButton(0))
+        if (worldobject.GetComponent<IRemovable>() != null && Input.GetMouseButton(0))
         {
             worldobject.GetComponent<BuildingsObject>().Remove();
             Debug.Log(true);

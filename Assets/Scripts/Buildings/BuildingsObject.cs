@@ -3,7 +3,7 @@ using System.Linq;
 using Buildings;
 using UnityEngine;
 
-public class BuildingsObject : BuildingsGrid, IRemoveable
+public class BuildingsObject : BuildingsGrid, IRemovable
 {
     private Renderer _mainRenderer;
     private BoxCollider _collider;
