@@ -1,3 +1,4 @@
+using Buildings;
 using UnityEngine;
 
 public class BuildingsGrid : MonoBehaviour
@@ -25,11 +26,10 @@ public class BuildingsGrid : MonoBehaviour
                 var hitInfo = RaycastHit();
                 if (Input.GetMouseButtonDown(1))
                 {
-                    if (hitInfo.Value.transform.gameObject.layer == 7)
+                    if (hitInfo.Value.transform.gameObject.GetComponent<IMovable>() != null)
                     {
                         _flyingBuilding = hitInfo.Value.transform.GetComponent<BuildingsObject>();
-                        var collider = _flyingBuilding.GetComponent<Collider>();
-                        collider.enabled = false;
+                        _flyingBuilding.GetComponent<Collider>().enabled = false;
                         return; 
                     }
                 }
@@ -85,10 +85,8 @@ public class BuildingsGrid : MonoBehaviour
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+        return false;
+        
     }
 
 
