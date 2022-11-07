@@ -24,6 +24,8 @@ public class BuildingsGrid : MonoBehaviour
             if (RaycastHit() != null)
             {
                 var hitInfo = RaycastHit();
+                var position = new Vector3(hitInfo.Value.transform.position.x, hitInfo.Value.transform.position.y,
+                    hitInfo.Value.transform.position.z);
                 if (Input.GetMouseButtonDown(1))
                 {
                     if (hitInfo.Value.transform.gameObject.GetComponent<IMovable>() != null)
