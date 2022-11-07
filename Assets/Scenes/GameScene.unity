@@ -2768,7 +2768,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1604497482}
         m_TargetAssemblyTypeName: DestoryController, Assembly-CSharp
-        m_MethodName: StartFunc
+        m_MethodName: ChangeStatusFunc
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
