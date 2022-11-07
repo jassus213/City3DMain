@@ -1,3 +1,4 @@
+using Buildings;
 using UnityEngine;
 
 public class BuildingsGrid : MonoBehaviour
@@ -6,7 +7,7 @@ public class BuildingsGrid : MonoBehaviour
     private BuildingsObject _flyingBuilding;
 
 
-    public void StartPlacingBuild(BuildingsObject buildingPrefab)
+    public void StartPlacingBuild(Building buildingPrefab)
     {
         if (_flyingBuilding != null)
         {
@@ -23,13 +24,14 @@ public class BuildingsGrid : MonoBehaviour
             if (RaycastHit() != null)
             {
                 var hitInfo = RaycastHit();
+                var position = new Vector3(hitInfo.Value.transform.position.x, hitInfo.Value.transform.position.y,
+                    hitInfo.Value.transform.position.z);
                 if (Input.GetMouseButtonDown(1))
                 {
-                    if (hitInfo.Value.transform.gameObject.layer == 7)
+                    if (hitInfo.Value.transform.gameObject.GetComponent<IMovable>() != null)
                     {
                         _flyingBuilding = hitInfo.Value.transform.GetComponent<BuildingsObject>();
-                        var collider = _flyingBuilding.GetComponent<Collider>();
-                        collider.enabled = false;
+                        _flyingBuilding.GetComponent<Collider>().enabled = false;
                         return; 
                     }
                 }
@@ -85,10 +87,8 @@ public class BuildingsGrid : MonoBehaviour
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+        return false;
+        
     }
 
 
