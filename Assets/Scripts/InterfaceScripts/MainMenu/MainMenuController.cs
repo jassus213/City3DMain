@@ -15,12 +15,8 @@ public class MainMenuController : MonoBehaviour
     {
         folder.SetActive(false);
     }
-
     public void LoadScene()
     {
         SceneManager.LoadScene(_loadingScene);
     }
-    
-   
-
 }
