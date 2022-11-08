@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 public class StartScreenPresenter : IStartMenuPresenter, IInitializable, IDisposable
@@ -17,11 +18,12 @@ public class StartScreenPresenter : IStartMenuPresenter, IInitializable, IDispos
         _view.SetPresenter(this);
 
         _signalBus.Subscribe<MainMenuSignals.OnBackToStartMenu>(OnBackToStartMenuCallback);
+        _signalBus.Subscribe<MainMenuSignals.OnBackToStartMenu>(OnNewGameClick);
     }
 
     public void OnNewGameClick()
     {
-        _view.Show(false);
+        SceneManager.LoadScene("GameScene");
         _signalBus.Fire<MainMenuSignals.OnNewGame>();
     }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -14,6 +15,7 @@ public class StartMenuView : MonoBehaviour, IStartMenuView
         _presenter = presenter;
 
         _newGameButton.onClick.AddListener(_presenter.OnNewGameClick);
+        
         _settingsButton.onClick.AddListener(_presenter.OnSettingsClick);
     }
 
@@ -21,4 +23,6 @@ public class StartMenuView : MonoBehaviour, IStartMenuView
     {
         gameObject.SetActive(show);
     }
+
+    
 }
