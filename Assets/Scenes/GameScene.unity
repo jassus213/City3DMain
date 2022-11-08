@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18018606, g: 0.22559257, b: 0.30678663, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1006,6 +1006,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1362,7 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aab0faf07dd44df888dc5fd11655342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _CityNameText: {fileID: 1837858233}
+  cityNameText: {fileID: 1837858233}
 --- !u!1 &448660899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,6 +3582,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 294d73cf0d776984bac05faf3208b7bd,
@@ -3684,6 +3686,7 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 294d73cf0d776984bac05faf3208b7bd, type: 3}
 --- !u!1 &1813472028 stripped
 GameObject:
