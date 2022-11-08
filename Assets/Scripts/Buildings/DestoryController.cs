@@ -5,40 +5,60 @@ using UnityEngine;
 public class DestoryController : MonoBehaviour
 {
 
-    private bool isActive = false;
+    [SerializeField] private Texture2D cursorDestroyer;
+    private bool _isActive = false;
+    
 
     [CanBeNull]
-    private GameObject IsHouse()
+    private GameObject GetGameObject()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo))
-        {
-            if (hitInfo.transform.gameObject != null)
-                return hitInfo.transform.gameObject;
-            
-        }
+        Physics.Raycast(ray, out RaycastHit hitInfo);
+            return hitInfo.transform.gameObject; 
 
-        return hitInfo.transform.gameObject;
+       
     }
 
     private void StartDestroy()
     {
-        var worldobject = IsHouse();
-        if (worldobject.GetComponent<IRemovable>() != null && Input.GetMouseButton(0))
+       
+
+        if (GetGameObject().GetComponent<IRemovable>() != null)
         {
-            worldobject.GetComponent<BuildingsObject>().Remove();
-            Debug.Log(true);
+            SetCustomCursor();
+            if (Input.GetMouseButton(0))
+            {
+                GetGameObject().GetComponent<BuildingsObject>().Remove();
+                SetDefaultCursor();
+                ChangeStatusFunc();
+            }
+            else
+            {
+                return;
+            }
+
         }
+        SetDefaultCursor();
     }
 
-    public void StartFunc()
+    public void ChangeStatusFunc()
     {
-        isActive = !isActive;
+        _isActive = !_isActive;
+    }
+
+    private void SetCustomCursor()
+    {
+        Cursor.SetCursor(cursorDestroyer, Vector2.zero, CursorMode.ForceSoftware);
+    }
+
+    private void SetDefaultCursor()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     private void Update()
     {
-        if (isActive)
+        if (_isActive)
         {
             StartDestroy();
         }
