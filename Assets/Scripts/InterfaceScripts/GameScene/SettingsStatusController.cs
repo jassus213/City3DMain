@@ -9,7 +9,7 @@ public class SettingsStatusController : MonoBehaviour
     private bool _settingsFolderIsActive = false;
     private bool _gameStatus = true;
     
-    
+   
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

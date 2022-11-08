@@ -21,9 +21,7 @@ public class DestoryController : MonoBehaviour
 
     private void StartDestroy()
     {
-       
-
-        if (GetGameObject().GetComponent<IRemovable>() != null)
+            if (GetGameObject().GetComponent<IRemovable>() != null)
         {
             SetCustomCursor();
             if (Input.GetMouseButton(0))
