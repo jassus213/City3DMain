@@ -1,8 +1,12 @@
 public interface IChooseNameView
 {
-    void SetPresenter(IChooseNamePresenter presenter);
+    void SetPresenter(IChooseNamePresenter presenters);
 
     void Show(bool show);
 
-    void SetCityName(string text);
+    string GetCityName();
+
+    void SetCityName(string name);
+
+    void ErrorCityName(string textError);
 }

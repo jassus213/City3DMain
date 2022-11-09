@@ -1,5 +1,8 @@
 public class CommonGameSettings
 {
+    private string _cityName;
+    public string CityName => _cityName;
+    
     private float _volume;
     public float Volume => _volume;
 
@@ -14,6 +17,12 @@ public class CommonGameSettings
         _volume = 0.5f;
         _isFullScreen = false;
         _quality = 2;
+        
+    }
+
+    public void SetCityName(string name)
+    {
+        _cityName = name;
     }
 
     public void SetVolume(float volume)

@@ -1,30 +1,44 @@
-using System;
+
+using UnityEngine;
 using Zenject;
 
-public class ChooseNamePresenter : IChooseNamePresenter, IInitializable, IDisposable
+public class ChooseNamePresenter : IChooseNamePresenter, IInitializable
 {
     private readonly SignalBus _signalBus;
     private readonly IChooseNameView _chooseNameView;
+    private readonly CommonGameSettings _commonGameSettings;
 
-    public ChooseNamePresenter(SignalBus signalBus, IChooseNameView chooseNameView)
+    public ChooseNamePresenter(SignalBus signalBus, IChooseNameView chooseNameView, CommonGameSettings commonGameSettings)
     {
         _signalBus = signalBus;
         _chooseNameView = chooseNameView;
+        _commonGameSettings = commonGameSettings;
     }
 
 
     public void Initialize()
     {
         _chooseNameView.SetPresenter(this);
+        
+        _chooseNameView.SetCityName(_commonGameSettings.CityName);
+        
     }
 
-    public void Dispose()
-    {
-        throw new NotImplementedException();
-    }
+    
 
     public void OnSaveClick()
     {
+        var cityName = _chooseNameView.GetCityName();
+        if (string.IsNullOrEmpty(cityName))
+        {
+            _chooseNameView.ErrorCityName("Invalid City Name");
+            return;
+        }
+        
+        _commonGameSettings.SetCityName(cityName);
         _chooseNameView.Show(false);
+        Debug.Log(_commonGameSettings.CityName);
     }
+
+   
 }
