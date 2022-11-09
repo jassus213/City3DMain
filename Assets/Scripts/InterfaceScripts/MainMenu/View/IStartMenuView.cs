@@ -1,6 +1,6 @@
 public interface IStartMenuView
 {
-    void SetPresenter(IStartMenuPresenter presenter);
+    void SetPresenter(IMainMenuPresenter presenter);
 
     void Show(bool show);
     

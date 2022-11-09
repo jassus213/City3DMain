@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -8,9 +7,9 @@ public class StartMenuView : MonoBehaviour, IStartMenuView
     [SerializeField] private Button _newGameButton;
     [SerializeField] private Button _settingsButton;
 
-    private IStartMenuPresenter _presenter;
+    private IMainMenuPresenter _presenter;
 
-    public void SetPresenter(IStartMenuPresenter presenter)
+    public void SetPresenter(IMainMenuPresenter presenter)
     {
         _presenter = presenter;
 

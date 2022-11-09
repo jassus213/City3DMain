@@ -1,6 +1,4 @@
-
-
-interface ISettingsMenuView
+public interface ISettingsMenuView
 {
     void SetPresenter(ISettingsMenuPresenter presenter);
 

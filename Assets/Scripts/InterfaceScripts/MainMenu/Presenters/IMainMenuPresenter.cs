@@ -1,4 +1,4 @@
-public interface IStartMenuPresenter
+public interface IMainMenuPresenter
 {
     void OnNewGameClick();
     void OnSettingsClick();
