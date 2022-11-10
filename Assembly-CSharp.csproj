@@ -321,7 +321,7 @@
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Newtonsoft.Json">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/NetStandard/ref/2.1.0/netstandard.dll</HintPath>
@@ -690,55 +690,55 @@
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Notifications">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Notifications.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Notifications.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Notifications.iOS">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core.Analytics">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core.Environments">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mobile.AndroidLogcat.Editor">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Notifications.Android">
-     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
+     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
