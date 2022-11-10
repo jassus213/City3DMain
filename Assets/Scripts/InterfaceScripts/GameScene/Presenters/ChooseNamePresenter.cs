@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using Zenject;
+// ReSharper disable All
 
 public class ChooseNamePresenter : IChooseNamePresenter, IInitializable
 {
@@ -34,11 +35,12 @@ public class ChooseNamePresenter : IChooseNamePresenter, IInitializable
             _chooseNameView.ErrorCityName("Invalid City Name");
             return;
         }
-        
+       
         _commonGameSettings.SetCityName(cityName);
         _chooseNameView.Show(false);
+        _signalBus.Fire<GameSceneSignals.SetCityName>();
         Debug.Log(_commonGameSettings.CityName);
     }
 
-   
+  
 }
