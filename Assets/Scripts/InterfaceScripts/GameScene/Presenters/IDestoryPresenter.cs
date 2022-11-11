@@ -1,0 +1,1 @@
+public interface IDestoryPresenter{    void GetGameObject();}

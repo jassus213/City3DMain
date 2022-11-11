@@ -5,6 +5,7 @@ public class GameStartSceneInstaller : MonoInstaller
 {
     [SerializeField] private ChooseNameView _chooseNameView;
     [SerializeField] private CityNameView _cityNameView;
+    [SerializeField] private DestoyView _destoyView;
     
     public override void InstallBindings()
     {
@@ -12,5 +13,6 @@ public class GameStartSceneInstaller : MonoInstaller
 
         Container.BindInterfacesAndSelfTo<ChooseNameView>().FromInstance(_chooseNameView);
         Container.BindInterfacesAndSelfTo<CityNameView>().FromInstance(_cityNameView);
+        Container.BindInterfacesAndSelfTo<DestoyView>().FromInstance(_destoyView);
     }
 }
