@@ -1,1 +1,1 @@
-using UnityEngine;public interface IDestoryView{    void SetPresenter(IDestoryPresenter presenter);    void Show(bool show);    void DestroyObject(GameObject gameObject);}
+using UnityEngine;public interface IDestoryView{    void SetPresenter(IDestroyPresenter presenter);    void Show(bool show);}

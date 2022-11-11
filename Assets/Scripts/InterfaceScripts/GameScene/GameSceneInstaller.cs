@@ -11,6 +11,6 @@ public class GameSceneInstaller : Installer<GameSceneInstaller>
 
         Container.BindInterfacesAndSelfTo<ChooseNamePresenter>().AsSingle();
         Container.BindInterfacesAndSelfTo<CityNamePresenter>().AsSingle();
-        Container.BindInterfacesAndSelfTo<DestoryPresenter>().AsSingle();
+        Container.BindInterfacesAndSelfTo<DestroyPresenter>().AsSingle();
     }
 }

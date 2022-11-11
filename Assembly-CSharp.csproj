@@ -55,6 +55,7 @@
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Views/IChooseNameView.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/MainMenuController.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Presenters/CityNamePresenter.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Views/DestoyView.cs" />
      <Compile Include="Assets/Scripts/CameraScripts/CameraZoom.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/Presenters/MainMenuPresenter.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/MainMenuInstaller.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets/Scripts/Buildings/DestoryController.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/View/ISettingsMenuView.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/GameSceneSignals.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Views/IDestoryView.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/GameSceneInstaller.cs" />
      <Compile Include="Assets/Scripts/Buildings/BuildingsGrid.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Views/ChooseNameView.cs" />
@@ -74,10 +76,8 @@
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Presenters/ICityNamePresenter.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/MainMenuSignals.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/GameStartSceneInstaller.cs" />
-     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Views/DestoyView.cs" />
-     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Views/IDestoryView.cs" />
-     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Presenters/DestoryPresenter.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Presenters/IDestoryPresenter.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/Presenters/DestoryPresenter.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

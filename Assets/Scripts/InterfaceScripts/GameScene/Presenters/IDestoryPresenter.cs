@@ -1,1 +1,1 @@
-public interface IDestoryPresenter{    void GetGameObject();}
+public interface IDestroyPresenter{        void StartDestroyMode();}
