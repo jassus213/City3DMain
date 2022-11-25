@@ -1,0 +1,16 @@
+using Zenject;
+
+
+public class GameSceneInstaller : Installer<GameSceneInstaller>
+{
+    public override void InstallBindings()
+    {
+        Container.DeclareSignal<GameSceneSignals.SaveCityName>().OptionalSubscriber();
+        Container.DeclareSignal<GameSceneSignals.SetCityName>().OptionalSubscriber();
+        Container.DeclareSignal<GameSceneSignals.OnDestoyClick>().OptionalSubscriber();
+
+        Container.BindInterfacesAndSelfTo<ChooseNamePresenter>().AsSingle();
+        Container.BindInterfacesAndSelfTo<CityNamePresenter>().AsSingle();
+        Container.BindInterfacesAndSelfTo<DestroyPresenter>().AsSingle();
+    }
+}

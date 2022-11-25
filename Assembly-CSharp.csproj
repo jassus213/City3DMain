@@ -41,20 +41,44 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/SettingsStatusController.cs" />
-     <Compile Include="Assets/Scripts/Buildings/BuildingsObject.cs" />
-     <Compile Include="Assets/Scripts/Buildings/Building.cs" />
-     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ButtonsContainer.cs" />
-     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/CityNameSystem.cs" />
+     <Compile Include="Assets/Scripts/App/AppInstaller.cs" />
+     <Compile Include="Assets/Scripts/Legacy/Buildings/BuildingsObject.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/ChooseNamePresenter.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/Settings/SettingsMenuPresenter.cs" />
+     <Compile Include="Assets/Scripts/Installers/MainMenu/MainMenuStartSceneInstaller.cs" />
+     <Compile Include="Assets/Scripts/App/Models/CommonGameSettings.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/Settings/SettingsMenuView.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/Settings/Interfaces/ISettingsMenuPresenter.cs" />
+     <Compile Include="Assets/Scripts/Legacy/Buildings/Building.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/Intrefaces/IMainMenuView.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/Interfaces/IChooseNamePresenter.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/Interfaces/IChooseNameView.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/MainMenuController.cs" />
-     <Compile Include="Assets/Scripts/CameraScripts/CameraZoom.cs" />
-     <Compile Include="Assets/Scripts/Buildings/Interfaces/IRemovable.cs" />
-     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/SettingsController.cs" />
-     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ShopController.cs" />
-     <Compile Include="Assets/Scripts/Buildings/DestoryController.cs" />
-     <Compile Include="Assets/Scripts/Buildings/BuildingsGrid.cs" />
-     <Compile Include="Assets/Scripts/Buildings/Interfaces/IMovable.cs" />
-     <Compile Include="Assets/Scripts/CameraScripts/CameraMovment.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/CityNamePresenter.cs" />
+     <Compile Include="Assets/Scripts/Legacy/Buildings/Interfaces/IRotateble.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/DestroyButton/DestoyView.cs" />
+     <Compile Include="Assets/Scripts/Legacy/CameraScripts/CameraZoom.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/MainMenuPresenter.cs" />
+     <Compile Include="Assets/Scripts/Installers/MainMenu/MainMenuInstaller.cs" />
+     <Compile Include="Assets/Scripts/Legacy/Buildings/Interfaces/IRemovable.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/Interfaces/iCityNameView.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/Intrefaces/IMainMenuPresenter.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/MainMenuView.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/CityNameView.cs" />
+     <Compile Include="Assets/Scripts/Legacy/Buildings/DestoryController.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/MainMenu/Settings/Interfaces/ISettingsMenuView.cs" />
+     <Compile Include="Assets/Scripts/Installers/GameScene/GameSceneSignals.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/DestroyButton/Interfaces/IDestoryView.cs" />
+     <Compile Include="Assets/Scripts/Installers/GameScene/GameSceneInstaller.cs" />
+     <Compile Include="Assets/Scripts/Legacy/Buildings/BuildingsGrid.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/ChooseNameView.cs" />
+     <Compile Include="Assets/Scripts/Legacy/Buildings/Interfaces/IMovable.cs" />
+     <Compile Include="Assets/Scripts/Legacy/CameraScripts/CameraMovment.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/Interfaces/ICityNamePresenter.cs" />
+     <Compile Include="Assets/Scripts/Installers/MainMenu/MainMenuSignals.cs" />
+     <Compile Include="Assets/Scripts/Installers/GameScene/GameViewInstaller.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/DestroyButton/Interfaces/IDestoryPresenter.cs" />
+     <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/DestroyButton/DestoryPresenter.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
@@ -71,6 +95,7 @@
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets/POLYGON city pack/Read_me.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
      <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
@@ -320,8 +345,23 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
+     <Reference Include="Zenject-usage">
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+     </Reference>
      <Reference Include="Newtonsoft.Json">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/NetStandard/ref/2.1.0/netstandard.dll</HintPath>
@@ -690,58 +730,74 @@
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Notifications">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Notifications.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Notifications.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Notifications.iOS">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core.Analytics">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core.Environments">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mobile.AndroidLogcat.Editor">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Notifications.Android">
-     <HintPath>/Users/timofeyuv/Desktop/City3DMain/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
+     <HintPath>/Users/JaSSuS/Documents/City3DMain/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Zenject-Editor.csproj">
+      <Project>{ed6a3b91-fd04-f264-9b78-6fafb23db383}</Project>
+      <Name>Zenject-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
+      <Project>{b37c3d1c-5040-390d-0937-14ae8ce3c4f1}</Project>
+      <Name>Zenject-PoolMonitor-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
+      <Project>{1b415d9e-0551-fb07-9589-8b93995f883a}</Project>
+      <Name>Zenject-ReflectionBaking-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject.csproj">
+      <Project>{d1df6dcd-cece-5a9d-abb0-a19df1e20a95}</Project>
+      <Name>Zenject</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

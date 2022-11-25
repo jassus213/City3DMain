@@ -1,0 +1,1 @@
+using UnityEngine;public interface IDestoryView{    void SetPresenter(IDestroyPresenter presenter);    void Show(bool show);}
