@@ -79,7 +79,7 @@ public class BuildingsObject : BuildingsGrid, IRemovable, IMovable
             //var objectSize = Vector3.Scale(transform.localScale, bounds.size);
             var position = gameObject.transform.position;
             position = new Vector3(position.x, position.y + bounds.size.y, position.z);
-            gameObject.transform.position = position;
+            //gameObject.transform.position = position;
             return false;
         }
 
@@ -88,6 +88,15 @@ public class BuildingsObject : BuildingsGrid, IRemovable, IMovable
 
 
     public void Remove()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public BuildingsObject(InputState inputState) : base(inputState)
+    {
+    }
+
+    public void DestroyObject()
     {
         Destroy(this.gameObject);
     }

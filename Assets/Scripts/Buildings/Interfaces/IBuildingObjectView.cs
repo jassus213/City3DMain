@@ -1,0 +1,1 @@
+using UnityEngine;namespace Buildings.Interfaces{    public interface IBuildingObjectView    {        void SetPresenter(IBuildingObjectPresenter buildingObjectPresenter);        GameObject GetBuilding();        void SetPosition(Vector3 position);        void SetColor(bool result);    }}

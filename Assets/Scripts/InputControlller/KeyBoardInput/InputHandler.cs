@@ -1,0 +1,1 @@
+using UnityEngine;using Zenject;public class InputHandler : ITickable{    readonly InputState _inputState;    public InputHandler(InputState inputState)    {        _inputState = inputState;    }    public void Tick()    {        _inputState.IsEscClick = Input.GetKeyDown(KeyCode.Escape);        _inputState.IsEnterClick = Input.GetKeyDown(KeyCode.Return);    }}

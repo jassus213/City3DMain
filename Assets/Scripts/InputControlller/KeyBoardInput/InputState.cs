@@ -1,0 +1,1 @@
+public class InputState{    public bool IsEscClick { get; set; }    public bool IsEnterClick { get; set; }}

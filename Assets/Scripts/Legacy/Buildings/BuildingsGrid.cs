@@ -1,12 +1,17 @@
 using Buildings;
 using UnityEngine;
+using Zenject;
 
 public class BuildingsGrid : MonoBehaviour, IRotateble
 {
     private bool _isCanPlase;
     private BuildingsObject _flyingBuilding;
+    [Inject] private readonly InputState _inputState;
 
-
+    public BuildingsGrid(InputState inputState)
+    {
+        _inputState = inputState;
+    }
     public void StartPlacingBuild(Building buildingPrefab)
     {
         if (_flyingBuilding != null)

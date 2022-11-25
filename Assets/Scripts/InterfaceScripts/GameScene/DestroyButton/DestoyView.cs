@@ -14,7 +14,6 @@ public class DestoyView : MonoBehaviour, IDestoryView
         _destroyButton.onClick.AddListener(_presenter.StartDestroyMode);
     }
 
-    
 
     public void Show(bool show)
     {

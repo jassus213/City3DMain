@@ -14,7 +14,7 @@ public class MainMenuView : MonoBehaviour, IMainMenuView
         _presenter = presenter;
 
         _newGameButton.onClick.AddListener(_presenter.OnNewGameClick);
-        
+
         _settingsButton.onClick.AddListener(_presenter.OnSettingsClick);
     }
 
@@ -22,6 +22,4 @@ public class MainMenuView : MonoBehaviour, IMainMenuView
     {
         gameObject.SetActive(show);
     }
-
-    
 }

@@ -1,7 +1,4 @@
-namespace Buildings
+public interface IRemovable
 {
-    public interface IRemovable
-    {
-        void Remove();
-    }
+    void DestroyObject();
 }

@@ -1,1 +1,1 @@
-public interface IDestroyPresenter{        void StartDestroyMode();}
+public interface IDestroyPresenter{    void StartDestroyMode();}

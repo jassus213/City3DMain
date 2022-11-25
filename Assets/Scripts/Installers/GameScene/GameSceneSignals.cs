@@ -1,11 +1,7 @@
 public class GameSceneSignals
 {
     public class SaveCityName { }
-    
     public class SetCityName { }
 
-    public class OnDestoyClick
-    {
-        public string HouseName { get; set; }
-    }
+    public class OnDestoyClick { }
 }

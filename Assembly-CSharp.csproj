@@ -71,6 +71,7 @@
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/DestroyButton/Interfaces/IDestoryView.cs" />
      <Compile Include="Assets/Scripts/Installers/GameScene/GameSceneInstaller.cs" />
      <Compile Include="Assets/Scripts/Legacy/Buildings/BuildingsGrid.cs" />
+     <Compile Include="Assets/Scripts/InputControlller/KeyBoardInput/InputState.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/ChooseName/ChooseNameView.cs" />
      <Compile Include="Assets/Scripts/Legacy/Buildings/Interfaces/IMovable.cs" />
      <Compile Include="Assets/Scripts/Legacy/CameraScripts/CameraMovment.cs" />
@@ -79,6 +80,13 @@
      <Compile Include="Assets/Scripts/Installers/GameScene/GameViewInstaller.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/DestroyButton/Interfaces/IDestoryPresenter.cs" />
      <Compile Include="Assets/Scripts/InterfaceScripts/GameScene/DestroyButton/DestoryPresenter.cs" />
+     <Compile Include="Assets/Scripts/InputControlller/KeyBoardInput/InputHandler.cs" />
+     <Compile Include="Assets/Scripts/InputControlller/MouseInput/MouseHandler.cs" />
+     <Compile Include="Assets/Scripts/InputControlller/MouseInput/MouseState.cs" />
+     <Compile Include="Assets/Scripts/Buildings/BuldingObjectPresenter.cs" />
+     <Compile Include="Assets/Scripts/Buildings/Interfaces/IBuildingObjectPresenter.cs" />
+     <Compile Include="Assets/Scripts/Buildings/BuildingObjectView.cs" />
+     <Compile Include="Assets/Scripts/Buildings/Interfaces/IBuildingObjectView.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
