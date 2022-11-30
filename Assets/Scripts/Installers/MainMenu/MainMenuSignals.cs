@@ -4,5 +4,5 @@ public class MainMenuSignals
 
         public class OnSettingsMenu { }
         public class OnBackToStartMenu { }
-        
+
 }

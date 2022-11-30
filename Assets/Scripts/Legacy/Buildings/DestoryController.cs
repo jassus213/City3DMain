@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class DestoryController : MonoBehaviour
 {
-
     [SerializeField] private Texture2D cursorDestroyer;
     private bool _isActive = false;
-    
+
 
     [CanBeNull]
     private GameObject GetGameObject()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out RaycastHit hitInfo);
-            return hitInfo.transform.gameObject; 
-
-       
+        return hitInfo.transform.gameObject;
     }
 
     private void StartDestroy()
     {
-            if (GetGameObject().GetComponent<IRemovable>() != null)
+        if (GetGameObject().GetComponent<IRemovable>() != null)
         {
             SetCustomCursor();
             if (Input.GetMouseButton(0))
@@ -34,8 +31,8 @@ public class DestoryController : MonoBehaviour
             {
                 return;
             }
-
         }
+
         SetDefaultCursor();
     }
 

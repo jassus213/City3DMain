@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class CameraMovment : MonoBehaviour
 {
-
     private Camera _myCamera; //Главная камера
     private float cameraHeight = 235; //Высота камеры
 
     void Awake()
     {
-       _myCamera = Camera.main;
+        _myCamera = Camera.main;
     }
-    
+
     void Update()
     {
         CameraMove();
@@ -43,7 +42,7 @@ public class CameraMovment : MonoBehaviour
 
 
             float xMovement = 0;
-            
+
             if (xDirection < 0)
             {
                 xMovement = -3f * xforce;
@@ -67,8 +66,8 @@ public class CameraMovment : MonoBehaviour
 
             _myCamera.transform.position += _myCamera.transform.forward * yMovement * Time.deltaTime;
             _myCamera.transform.position += _myCamera.transform.right * xMovement * Time.deltaTime;
-            _myCamera.transform.position = new Vector3(_myCamera.transform.position.x, cameraHeight, _myCamera.transform.position.z); //Исправляет уход в землю
-            
+            _myCamera.transform.position = new Vector3(_myCamera.transform.position.x, cameraHeight,
+                _myCamera.transform.position.z); //Исправляет уход в землю
         }
     }
 

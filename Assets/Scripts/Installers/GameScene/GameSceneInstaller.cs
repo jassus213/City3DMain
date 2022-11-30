@@ -8,6 +8,7 @@ public class GameSceneInstaller : Installer<GameSceneInstaller>
         Container.DeclareSignal<GameSceneSignals.SaveCityName>().OptionalSubscriber();
         Container.DeclareSignal<GameSceneSignals.SetCityName>().OptionalSubscriber();
         Container.DeclareSignal<GameSceneSignals.OnDestoyClick>().OptionalSubscriber();
+        Container.DeclareSignal<GameSceneSignals.StartPlaceBuilding>().OptionalSubscriber();
 
         Container.BindInterfacesTo<InputHandler>().AsSingle();
         Container.Bind<InputState>().AsSingle();
